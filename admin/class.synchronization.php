@@ -6,7 +6,7 @@ class WPSMT_Smart_Salesmate_Admin_Synchronization {
        	if ( isset( $_POST['submit'] ) ) {
 
             if(isset($_REQUEST['tab']) && $_REQUEST['tab'] == "general"){
-                $api_key                  = sanitize_text_field($_REQUEST['wpsmt_smart_salesmate_settings']['psn-token']);
+                $api_key                  = sanitize_text_field($_REQUEST['wpsmt_smart_salesmate_settings']['smt-token']);
             }
                         
             $wpsmt_smart_salesmate_settings  = !empty(get_option( 'wpsmt_smart_salesmate_settings' )) ? get_option( 'wpsmt_smart_salesmate_settings' ) : array();

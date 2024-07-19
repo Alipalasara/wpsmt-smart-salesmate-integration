@@ -2,7 +2,8 @@
 	
 	$wpsmt_smart_salesmate 			= get_option( 'wpsmt_smart_salesmate' );
 	$wpsmt_smart_salesmate_settings = get_option( 'wpsmt_smart_salesmate_settings' );
-	$apitoken 						=  isset($wpsmt_smart_salesmate_settings['psn-token']) ? $wpsmt_smart_salesmate_settings['psn-token'] : "";
+	$apitoken 						=  isset($wpsmt_smart_salesmate_settings['smt-token']) ? $wpsmt_smart_salesmate_settings['smt-token'] : "";
+	$apiurl 						=  isset($wpsmt_smart_salesmate_settings['smt-url']) ? $wpsmt_smart_salesmate_settings['smt-url'] : "";
 
 ?>
 
@@ -30,12 +31,22 @@
 
 					<tr>
 						<th scope="row">
-							<label><?php echo esc_html__( 'API Token', 'wpsmt-smart-salesmate' ); ?></label>
+							<label><?php echo esc_html__( 'Session Token	', 'wpsmt-smart-salesmate' ); ?></label>
 						</th>
 						<td>
-							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[psn-token]" value="<?php echo esc_attr($apitoken); ?>" required />
+							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-token]" placeholder=" Enter Your Session Token" value="<?php echo esc_attr($apitoken); ?>" required />
 							<br>
-							<a href="https://app.salesmate.com/settings/api">Get API key</a>
+							<a href="https://app.salesmate.com/settings/api">Get Session Token</a>
+						</td>
+					</tr>				
+					<tr>
+						<th scope="row">
+							<label><?php echo esc_html__( 'x-linkname', 'wpsmt-smart-salesmate' ); ?></label>
+						</th>
+						<td>
+							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-url]" placeholder=" Example : yourlinkname.salesmate.io" value="<?php echo esc_attr($apitoken); ?>" required />
+							<br>
+							<a href="https://ibb.co/Ss18GFn">Enter Your Deshboard Link</a>
 						</td>
 					</tr>				
 				</tbody>

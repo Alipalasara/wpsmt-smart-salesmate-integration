@@ -9,7 +9,7 @@ class WPSMT_Smart_Salesmate_API {
         $wpsmt_smart_salesmate_data_center    = 'https://oauth.salesmate.com';
         $wpsmt_smart_salesmate_settings     = get_option( 'wpsmt_smart_salesmate_settings' );
 
-        $api_key = isset($wpsmt_smart_salesmate_settings['psn-token']) ? esc_attr($wpsmt_smart_salesmate_settings['psn-token']) : '';
+        $api_key = isset($wpsmt_smart_salesmate_settings['smt-token']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-token']) : '';
 
         $this->url      = $wpsmt_smart_salesmate_data_center;
         $this->api_key  = $api_key;
