@@ -4,48 +4,42 @@ class GetListofModules{
       public function execute(){
         $getListModules = array(
                         'modules' => array(
-                                            'deals' => array(
+                                            'contact' => array(
                                                         'creatable' => 1,
                                                         'deletable' => 1,
-                                                        'api_name' =>  'deals',
-                                                        'plural_label' =>  'Deals',
+                                                        'api_name' =>  'contact',
+                                                        'plural_label' =>  'Contact',
                                                         ),
-                                            // 'leads' => array(
-                                            //             'creatable' => 1,
-                                            //             'deletable' => 1,
-                                            //             'api_name' =>  'leads',
-                                            //             'plural_label' =>  'Leads',
-                                            //             ),
-                                            'activities' => array(
+                                            'deal' => array(
                                                         'creatable' => 1,
                                                         'deletable' => 1,
-                                                        'api_name' =>  'activities',
-                                                        'plural_label' =>  'Activities',
+                                                        'api_name' =>  'deal',
+                                                        'plural_label' =>  'Deal',
                                                         ),
-                                            'persons' => array(
+                                            'company' => array(
                                                         'creatable' => 1,
                                                         'deletable' => 1,
-                                                        'api_name' =>  'persons',
-                                                        'plural_label' =>  'Persons',
+                                                        'api_name' =>  'company',
+                                                        'plural_label' =>  'Company',
                                                         ),
-                                            // 'organizations' => array(
-                                            //             'creatable' => 1,
-                                            //             'deletable' => 1,
-                                            //             'api_name' =>  'organizations',
-                                            //             'plural_label' =>  'Organizations',
-                                            //             ),
-                                            'products' => array(
+                                            'activity' => array(
                                                         'creatable' => 1,
                                                         'deletable' => 1,
-                                                        'api_name' =>  'products',
-                                                        'plural_label' =>  'Products',
+                                                        'api_name' =>  'activity',
+                                                        'plural_label' =>  'Activity',
                                                         ),
-                                            // 'projects' => array(
-                                            //             'creatable' => 1,
-                                            //             'deletable' => 1,
-                                            //             'api_name' =>  'projects',
-                                            //             'plural_label' =>  'Projects',
-                                            //             ),
+                                            'users' => array(
+                                                        'creatable' => 1,
+                                                        'deletable' => 1,
+                                                        'api_name' =>  'users',
+                                                        'plural_label' =>  'Users',
+                                                        ),
+                                            'notes' => array(
+                                                        'creatable' => 1,
+                                                        'deletable' => 1,
+                                                        'api_name' =>  'notes',
+                                                        'plural_label' =>  'Notes',
+                                                        ),
                                         )
         );
         return $getListModules;
