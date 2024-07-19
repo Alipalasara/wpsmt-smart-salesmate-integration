@@ -154,7 +154,7 @@ class WPSMT_Smart_Salesmate_Admin {
                         'manage_options', 
                         'wpsmt-smart-salesmate-integration', 
                         array($this, 'settings_callback'), 
-                        'dashicons-paperclip' 
+                        'dashicons-rest-api' 
                     );
 
         add_submenu_page( 
