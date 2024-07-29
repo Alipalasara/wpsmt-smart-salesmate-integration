@@ -28,11 +28,11 @@ class GetListofModules{
                                                         'api_name' =>  'activity',
                                                         'plural_label' =>  'Activity',
                                                         ),
-                                            'users' => array(
+                                            'custom_module' => array(
                                                         'creatable' => 1,
                                                         'deletable' => 1,
-                                                        'api_name' =>  'users',
-                                                        'plural_label' =>  'Users',
+                                                        'api_name' =>  'custom_module',
+                                                        'plural_label' =>  'Custom Module',
                                                         ),
                                             'notes' => array(
                                                         'creatable' => 1,
