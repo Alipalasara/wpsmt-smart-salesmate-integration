@@ -11,7 +11,7 @@ class WPSMT_Smart_Salesmate_API {
         $api_key = isset($wpsmt_smart_salesmate_settings['smt-token']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-token']) : '';
         $store_link= get_option('wpsmt_smart_salesmate_settings');
 
-        $this->store_link = $store_link['smt-url'];
+        $this->store_link = isset($wpsmt_smart_salesmate_settings['smt-url']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-url']) : '';
         $this->api_key  = $api_key;
         $this->loadAPIFiles();
 
