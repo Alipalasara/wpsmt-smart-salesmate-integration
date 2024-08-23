@@ -6,17 +6,17 @@ class GetFieldsMetaData{
                     $GetFieldsMetaData = array(
                                                 'fields' => array(
                                                                     'owner' => array(
-                                                                                'system_mandatory' => 1,
+                                                                                'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
                                                                                 'display_label' => 'Owner',
                                                                                 'api_name' => 'owner'
                                                                             ),
 
                                                                      'firstName' => array(
-                                                                                'system_mandatory' => 0,
+                                                                                'system_mandatory' => 1,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Label',
-                                                                                'api_name' => 'label'
+                                                                                'display_label' => 'FirstName',
+                                                                                'api_name' => 'firstName'
                                                                             ),
 
                                                                     'lastName' => array(
@@ -25,7 +25,12 @@ class GetFieldsMetaData{
                                                                                 'display_label' => 'LastName',
                                                                                 'api_name' => 'lastName'
                                                                             ),
-
+                                                                    'tags' => array(
+                                                                                'system_mandatory' => 0,
+                                                                                'field_read_only' => '',
+                                                                                'display_label' => 'Tags',
+                                                                                'api_name' => 'tags'
+                                                                            ),
                                                                     'mobile' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
@@ -155,7 +160,7 @@ class GetFieldsMetaData{
                                                                     'api_name' => 'name'
                                                                 ),
                                                         'owner' => array(
-                                                                    'system_mandatory' => 1,
+                                                                    'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Owner',
                                                                     'api_name' => 'owner'
@@ -265,25 +270,25 @@ class GetFieldsMetaData{
                                                                     'api_name' => 'primaryContact'
                                                                 ),
                                                         'owner' => array(
-                                                                    'system_mandatory' => 1,
+                                                                    'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Owner ',
                                                                     'api_name' => 'owner'
                                                                 ),
                                                         'pipeline' => array(
-                                                                    'system_mandatory' => 1,
+                                                                    'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Pipeline',
                                                                     'api_name' => 'pipeline'
                                                                 ),
                                                         'status' => array(
-                                                                    'system_mandatory' => 1,
+                                                                    'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Status',
                                                                     'api_name' => 'status'
                                                                 ),
                                                         'stage' => array(
-                                                                    'system_mandatory' => 1,
+                                                                    'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Stage',
                                                                     'api_name' => 'stage'
@@ -382,62 +387,7 @@ class GetFieldsMetaData{
                                                         ),
                                                    
                                 );   
-                 }elseif($module == 'custom_module'){
-                     $GetFieldsMetaData = array(
-                                    'fields' => array(
-                                                        'name' => array(
-                                                                    'system_mandatory' => 1,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Name',
-                                                                    'api_name' => 'name'
-                                                                ),
-                                                        'owner' => array(
-                                                                    'system_mandatory' => 1,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Owner',
-                                                                    'api_name' => 'owner'
-                                                                ),
-                                                        'pipeline' => array(
-                                                                    'system_mandatory' => 1,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Pipeline',
-                                                                    'api_name' => 'pipeline'
-                                                                ),
-                                                        'stage' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Stage',
-                                                                    'api_name' => 'stage'
-                                                                ),
-                                                        'tags' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Tags',
-                                                                    'api_name' => 'tags'
-                                                                ),
-                                                        
-                                    ),
-                                ); 
-                     }
-                     elseif($module == 'notes'){
-                     $GetFieldsMetaData = array(
-                                    'fields' => array(
-                                                        'note' => array(
-                                                                    'system_mandatory' => 1,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Note',
-                                                                    'api_name' => 'note'
-                                                                ),
-                                                        'type' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Type ID',
-                                                                    'api_name' => 'type'
-                                                                ),
-                                                       
-                                    ),
-                                );   
-                     }
+                 }
                 return $GetFieldsMetaData;
             }
         }

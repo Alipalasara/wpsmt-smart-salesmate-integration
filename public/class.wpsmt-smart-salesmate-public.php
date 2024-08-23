@@ -186,13 +186,6 @@ class WPSMT_Smart_Salesmate_Public {
             }else{
                 $response = $salesmate_api_obj->addRecord($salesmate_module, $salesmate_data);
             }
-            
-            echo "<pre>";
-            echo "sssss";
-            print_r($record_id);
-            echo "</pre>";
-            exit;
-
 
             if ( isset( $response->data[0]->details->id ) ) {
                 $record_id = $response->data[0]->details->id;

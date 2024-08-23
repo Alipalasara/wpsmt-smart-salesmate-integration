@@ -1,17 +1,17 @@
 <?php
 class WPSMT_Smart_Salesmate_API {
     
-    var $url;
     var $api_key;
+    var $store_link;
     
     function __construct() {
        
-        $wpsmt_smart_salesmate_data_center    = 'https://oauth.salesmate.com';
         $wpsmt_smart_salesmate_settings     = get_option( 'wpsmt_smart_salesmate_settings' );
 
         $api_key = isset($wpsmt_smart_salesmate_settings['smt-token']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-token']) : '';
+        $store_link= get_option('wpsmt_smart_salesmate_settings');
 
-        $this->url      = $wpsmt_smart_salesmate_data_center;
+        $this->store_link = $store_link['smt-url'];
         $this->api_key  = $api_key;
         $this->loadAPIFiles();
 
@@ -31,14 +31,16 @@ class WPSMT_Smart_Salesmate_API {
     }
     
     function addRecord( $module, $data ) {
+        
 
         $json = json_encode( $data );
         $header = array(
             'Content-Type: application/json',
+            'accessToken: '.$this->api_key,
+            'x-linkname: '.$this->store_link
         );
 
-        $url = WPSMT_SALESMATEAPIS_URL.'/v1/'.$module.'/?api_token='.$this->api_key;
-        
+        $url = 'https://'.$this->store_link.'/apis/'.$module.'/v4';
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_HTTPHEADER, $header );
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
@@ -67,10 +69,12 @@ class WPSMT_Smart_Salesmate_API {
         
         $data = json_encode( $data );
         $header = array(
-            'Authorization: Salesmate-oauthtoken '.$this->token->access_token,
+            'Content-Type: application/json',
+            'accessToken: '.$this->api_key,
+            'x-linkname: '.$this->store_link
         );
         
-        $url = WPSMT_SALESMATEAPIS_URL.'/crm/v2/'.$module.'/'.$record_id;
+        $url = 'https://'.$this->store_link.'/apis/'.$module.'/v4/'.$record_id;
         
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_HTTPHEADER, $header );

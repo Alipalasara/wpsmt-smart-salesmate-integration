@@ -28,18 +28,6 @@ class GetListofModules{
                                                         'api_name' =>  'activity',
                                                         'plural_label' =>  'Activity',
                                                         ),
-                                            'custom_module' => array(
-                                                        'creatable' => 1,
-                                                        'deletable' => 1,
-                                                        'api_name' =>  'custom_module',
-                                                        'plural_label' =>  'Custom Module',
-                                                        ),
-                                            'notes' => array(
-                                                        'creatable' => 1,
-                                                        'deletable' => 1,
-                                                        'api_name' =>  'notes',
-                                                        'plural_label' =>  'Notes',
-                                                        ),
                                         )
         );
         return $getListModules;

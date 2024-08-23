@@ -44,7 +44,7 @@
 							<label><?php echo esc_html__( 'x-linkname', 'wpsmt-smart-salesmate' ); ?></label>
 						</th>
 						<td>
-							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-url]" placeholder=" Example : yourlinkname.salesmate.io" value="<?php echo esc_attr($apitoken); ?>" required />
+							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-url]" placeholder=" Example : yourlinkname.salesmate.io" value="<?php echo esc_attr($apiurl); ?>" required />
 							<br>
 							<a href="https://ibb.co/Ss18GFn">Enter Your Deshboard Link</a>
 						</td>
