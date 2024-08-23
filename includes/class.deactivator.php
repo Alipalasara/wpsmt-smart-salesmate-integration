@@ -2,7 +2,7 @@
 
 class WPSMT_Smart_Salesmate_Deactivator
 {
-    public function deactivate() {
+    public static function deactivate() {
 		global $wpdb;
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		
