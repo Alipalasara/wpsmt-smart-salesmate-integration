@@ -1,26 +1,25 @@
 <?php
-class WPSMT_Smart_Salesmate_Admin_Synchronization {
+class WPSPI_Smart_Pipedrive_Admin_Synchronization {
 
     public function processSynch($POST = array()){
        
        	if ( isset( $_POST['submit'] ) ) {
 
             if(isset($_REQUEST['tab']) && $_REQUEST['tab'] == "general"){
-                $api_key                  = sanitize_text_field($_REQUEST['wpsmt_smart_salesmate_settings']['smt-token']);
-                $sales_link              = sanitize_text_field($_REQUEST['wpsmt_smart_salesmate_settings']['smt-url']);
+                $api_key                  = sanitize_text_field($_REQUEST['wpspi_smart_pipedrive_settings']['psn-token']);
             }
                         
-            $wpsmt_smart_salesmate_settings  = !empty(get_option( 'wpsmt_smart_salesmate_settings' )) ? get_option( 'wpsmt_smart_salesmate_settings' ) : array();
+            $wpspi_smart_pipedrive_settings  = !empty(get_option( 'wpspi_smart_pipedrive_settings' )) ? get_option( 'wpspi_smart_pipedrive_settings' ) : array();
 
-            $wpsmt_smart_salesmate_settings = array_merge($wpsmt_smart_salesmate_settings, $_REQUEST['wpsmt_smart_salesmate_settings']);
+            $wpspi_smart_pipedrive_settings = array_merge($wpspi_smart_pipedrive_settings, $_REQUEST['wpspi_smart_pipedrive_settings']);
             
-            update_option( 'wpsmt_smart_salesmate_settings', $wpsmt_smart_salesmate_settings );
+            update_option( 'wpspi_smart_pipedrive_settings', $wpspi_smart_pipedrive_settings );
             
         }
 
 
         /*Synch product*/
-        if( isset( $_POST['smart_synch'] ) && $_POST['smart_synch'] == 'salesmate' ){
+        if( isset( $_POST['smart_synch'] ) && $_POST['smart_synch'] == 'pipedrive' ){
 
            
             $id = $_POST['id'];
@@ -29,22 +28,22 @@ class WPSMT_Smart_Salesmate_Admin_Synchronization {
                 
                 case 'products':
                     
-                    $WPSMT_Smart_Salesmate_Public = new WPSMT_Smart_Salesmate_Public();
-                    $WPSMT_Smart_Salesmate_Public->addProductToSalesmate( $id );
+                    $WPSPI_Smart_Pipedrive_Public = new WPSPI_Smart_Pipedrive_Public();
+                    $WPSPI_Smart_Pipedrive_Public->addProductToPipedrive( $id );
 
                     break;
 
                 case 'orders':
                     
-                    $WPSMT_Smart_Salesmate_Public = new WPSMT_Smart_Salesmate_Public();
-                    $WPSMT_Smart_Salesmate_Public->addOrderToSalesmate( $id );
+                    $WPSPI_Smart_Pipedrive_Public = new WPSPI_Smart_Pipedrive_Public();
+                    $WPSPI_Smart_Pipedrive_Public->addOrderToPipedrive( $id );
 
                     break;
 
                 case 'customers':
                     
-                    $WPSMT_Smart_Salesmate_Public = new WPSMT_Smart_Salesmate_Public();
-                    $WPSMT_Smart_Salesmate_Public->addUserToSalesmate( $id );
+                    $WPSPI_Smart_Pipedrive_Public = new WPSPI_Smart_Pipedrive_Public();
+                    $WPSPI_Smart_Pipedrive_Public->addUserToPipedrive( $id );
 
                     break;    
                 
@@ -59,7 +58,7 @@ class WPSMT_Smart_Salesmate_Admin_Synchronization {
     }
 
     public function displaySynchData(){
-        require_once WPSMT_PLUGIN_PATH . 'admin/partials/synchronization.php';
+        require_once WPSPI_PLUGIN_PATH . 'admin/partials/synchronization.php';
     }
 }
 ?>

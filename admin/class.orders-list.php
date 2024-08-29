@@ -10,8 +10,8 @@ class Order_Listed extends WP_List_Table {
 	/** Class constructor */
 	public function __construct() {
 		parent::__construct( [
-			'singular' => esc_html__( 'Order', 'wpsmt-smart-salesmate' ), //singular name of the listed records
-			'plural'   => esc_html__( 'Orders', 'wpsmt-smart-salesmate' ), //plural name of the listed records
+			'singular' => esc_html__( 'Order', 'wpspi-smart-pipedrive' ), //singular name of the listed records
+			'plural'   => esc_html__( 'Orders', 'wpspi-smart-pipedrive' ), //plural name of the listed records
 			'ajax'     => true //does this table support ajax?
 		] );
 	}
@@ -55,7 +55,7 @@ class Order_Listed extends WP_List_Table {
 	
 	/** Text displayed when no customer data is available */
 	public function no_items() {
-		echo esc_html__( 'No orders avaliable.', 'wpsmt-smart-salesmate' );
+		echo esc_html__( 'No orders avaliable.', 'wpspi-smart-pipedrive' );
 	}
 
 	/**
@@ -88,7 +88,7 @@ class Order_Listed extends WP_List_Table {
 		$action = '<form action="" method="post">                      
 						<input name="wp_module" value="orders" type="hidden" />
 						<input name="id" value="'.esc_attr($item['id']).'" type="hidden" />
-						<button class="button" name="smart_synch" value="salesmate" type="submit">'.esc_html__('Sync', 'wpsmt-smart-salesmate').'</button>
+						<button class="button" name="smart_synch" value="pipedrive" type="submit">'.esc_html__('Sync', 'wpspi-smart-pipedrive').'</button>
 					</form>';
 		return $action;
 	}
@@ -100,9 +100,9 @@ class Order_Listed extends WP_List_Table {
 	 */
 	function get_columns() {
 		$columns = [
-			'id'    	=> esc_html__( 'Order Id', 'wpsmt-smart-salesmate' ),
-			'date_created_gmt' => esc_html__( 'Create Time', 'wpsmt-smart-salesmate' ),
-			'action'    => esc_html__( 'Action', 'wpsmt-smart-salesmate' )
+			'id'    	=> esc_html__( 'Order Id', 'wpspi-smart-pipedrive' ),
+			'date_created_gmt' => esc_html__( 'Create Time', 'wpspi-smart-pipedrive' ),
+			'action'    => esc_html__( 'Action', 'wpspi-smart-pipedrive' )
 		];
 		return $columns;
 	}

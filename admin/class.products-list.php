@@ -8,8 +8,8 @@ class Product_Listed extends WP_List_Table {
 	/** Class constructor */
 	public function __construct() {
 		parent::__construct( [
-			'singular' => esc_html__( 'Order', 'wpsmt-smart-salesmate' ), //singular name of the listed records
-			'plural'   => esc_html__( 'Orders', 'wpsmt-smart-salesmate' ), //plural name of the listed records
+			'singular' => esc_html__( 'Order', 'wpspi-smart-pipedrive' ), //singular name of the listed records
+			'plural'   => esc_html__( 'Orders', 'wpspi-smart-pipedrive' ), //plural name of the listed records
 			'ajax'     => true //does this table support ajax?
 		] );
 	}
@@ -55,7 +55,7 @@ class Product_Listed extends WP_List_Table {
 	
 	/** Text displayed when no customer data is available */
 	public function no_items() {
-		echo esc_html__( 'No products avaliable.', 'wpsmt-smart-salesmate' );
+		echo esc_html__( 'No products avaliable.', 'wpspi-smart-pipedrive' );
 	}
 
 	/**
@@ -92,7 +92,7 @@ class Product_Listed extends WP_List_Table {
 						<input name="wp_module" value="products" type="hidden" />
 						<input name="id" value="'.esc_attr($item['ID']).'" type="hidden" />
 						<input name="product_sku" value="'.esc_attr($product->get_sku($item['ID'])).'" type="hidden" />
-						<button class="button" name="smart_synch" value="salesmate" type="submit">'.esc_html__('Sync', 'wpsmt-smart-salesmate').'</button>
+						<button class="button" name="smart_synch" value="pipedrive" type="submit">'.esc_html__('Sync', 'wpspi-smart-pipedrive').'</button>
 					</form>';
 		return $action;
 	}
@@ -104,11 +104,11 @@ class Product_Listed extends WP_List_Table {
 	 */
 	function get_columns() {
 		$columns = [
-			'ID'    => esc_html__( 'Product Id', 'wpsmt-smart-salesmate' ),
-			'post_title'    => esc_html__( 'Product Name', 'wpsmt-smart-salesmate' ),
-			'meta_value'    => esc_html__( 'Sku', 'wpsmt-smart-salesmate' ),
-			'post_date'    => esc_html__( 'Create Time', 'wpsmt-smart-salesmate' ),
-			'action'    => esc_html__( 'Action', 'wpsmt-smart-salesmate' )
+			'ID'    => esc_html__( 'Product Id', 'wpspi-smart-pipedrive' ),
+			'post_title'    => esc_html__( 'Product Name', 'wpspi-smart-pipedrive' ),
+			'meta_value'    => esc_html__( 'Sku', 'wpspi-smart-pipedrive' ),
+			'post_date'    => esc_html__( 'Create Time', 'wpspi-smart-pipedrive' ),
+			'action'    => esc_html__( 'Action', 'wpspi-smart-pipedrive' )
 		];
 		return $columns;
 	}

@@ -1,15 +1,14 @@
 <?php
 	
-	$wpsmt_smart_salesmate 			= get_option( 'wpsmt_smart_salesmate' );
-	$wpsmt_smart_salesmate_settings = get_option( 'wpsmt_smart_salesmate_settings' );
-	$apitoken 						=  isset($wpsmt_smart_salesmate_settings['smt-token']) ? $wpsmt_smart_salesmate_settings['smt-token'] : "";
-	$apiurl 						=  isset($wpsmt_smart_salesmate_settings['smt-url']) ? $wpsmt_smart_salesmate_settings['smt-url'] : "";
+	$wpspi_smart_pipedrive 			= get_option( 'wpspi_smart_pipedrive' );
+	$wpspi_smart_pipedrive_settings = get_option( 'wpspi_smart_pipedrive_settings' );
+	$apitoken 						=  isset($wpspi_smart_pipedrive_settings['psn-token']) ? $wpspi_smart_pipedrive_settings['psn-token'] : "";
 
 ?>
 
 <div class="wrap">                
 	
-	<h1><?php echo esc_html__( 'Salesmate CRM Settings and Authorization' ); ?></h1>
+	<h1><?php echo esc_html__( 'Pipedrive CRM Settings and Authorization' ); ?></h1>
 	<hr>
 
 	<form method="post">
@@ -18,8 +17,8 @@
 		?>
 
 		<nav class="nav-tab-wrapper woo-nav-tab-wrapper">
-			<a href="<?php echo admin_url('admin.php?page=wpsmt-smart-salesmate-integration&tab=general'); ?>" class="nav-tab <?php if($tab == 'general'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'General', 'wpsmt-smart-salesmate' ); ?></a>
-			<a href="<?php echo admin_url('admin.php?page=wpsmt-smart-salesmate-integration&tab=synch_settings'); ?>" class="nav-tab <?php if($tab == 'synch_settings'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Synch Settings', 'wpsmt-smart-salesmate' ); ?></a>
+			<a href="<?php echo admin_url('admin.php?page=wpspi-smart-pipedrive-integration&tab=general'); ?>" class="nav-tab <?php if($tab == 'general'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'General', 'wpspi-smart-pipedrive' ); ?></a>
+			<a href="<?php echo admin_url('admin.php?page=wpspi-smart-pipedrive-integration&tab=synch_settings'); ?>" class="nav-tab <?php if($tab == 'synch_settings'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Synch Settings', 'wpspi-smart-pipedrive' ); ?></a>
 		</nav>
 		
 		<input type="hidden" name="tab" value="<?php echo esc_html($tab); ?>">
@@ -31,22 +30,12 @@
 
 					<tr>
 						<th scope="row">
-							<label><?php echo esc_html__( 'Session Token	', 'wpsmt-smart-salesmate' ); ?></label>
+							<label><?php echo esc_html__( 'API Token', 'wpspi-smart-pipedrive' ); ?></label>
 						</th>
 						<td>
-							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-token]" placeholder=" Enter Your Session Token" value="<?php echo esc_attr($apitoken); ?>" required />
+							<input class="regular-text" type="text" name="wpspi_smart_pipedrive_settings[psn-token]" value="<?php echo esc_attr($apitoken); ?>" required />
 							<br>
-							<a href="https://app.salesmate.com/settings/api">Get Session Token</a>
-						</td>
-					</tr>				
-					<tr>
-						<th scope="row">
-							<label><?php echo esc_html__( 'x-linkname', 'wpsmt-smart-salesmate' ); ?></label>
-						</th>
-						<td>
-							<input class="regular-text" type="text" name="wpsmt_smart_salesmate_settings[smt-url]" placeholder=" Example : yourlinkname.salesmate.io" value="<?php echo esc_attr($apiurl); ?>" required />
-							<br>
-							<a href="https://ibb.co/Ss18GFn">Enter Your Deshboard Link</a>
+							<a href="https://app.pipedrive.com/settings/api">Get API key</a>
 						</td>
 					</tr>				
 				</tbody>
@@ -54,15 +43,15 @@
 
 			<div class="inline">
 				<p>
-					<input type='submit' class='button-primary' name="submit" value="<?php echo esc_html__( 'Save & Authorize', 'wpsmt-smart-salesmate' ); ?>" />
+					<input type='submit' class='button-primary' name="submit" value="<?php echo esc_html__( 'Save & Authorize', 'wpspi-smart-pipedrive' ); ?>" />
 				</p>
 			</div>
 
 		<?php }else if( isset($tab) && 'synch_settings' == $tab ){ ?>
 			<?php 
-				$smart_salesmate_obj   = new WPSMT_Smart_Salesmate();
-		        $wp_modules 	= $smart_salesmate_obj->get_wp_modules();
-		        $getListModules = $smart_salesmate_obj->get_salesmate_modules();
+				$smart_pipedrive_obj   = new WPSPI_Smart_Pipedrive();
+		        $wp_modules 	= $smart_pipedrive_obj->get_wp_modules();
+		        $getListModules = $smart_pipedrive_obj->get_pipedrive_modules();
 			?>
 			<table class="form-table synch_settings">
 				<tbody>
@@ -73,14 +62,14 @@
 					            	foreach ($wp_modules as $wp_module_key => $wp_module_name) {
 					            		?>
 						            		<tr>
-												<th scope="row"><label><?php echo esc_html__( "Enable {$wp_module_key} to Salesmate {$singleModule['api_name']} Sync", 'wpsmt-smart-salesmate' ); ?></label></th>
+												<th scope="row"><label><?php echo esc_html__( "Enable {$wp_module_key} to Pipedrive {$singleModule['api_name']} Sync", 'wpspi-smart-pipedrive' ); ?></label></th>
 												<td>
 													<fieldset>
 														<label>
 															<input 
 																type="checkbox" 
-																name="wpsmt_smart_salesmate_settings[synch][<?php echo $wp_module_key.'_'.$singleModule['api_name']; ?>]" 
-																<?php @checked( $wpsmt_smart_salesmate_settings['synch']["{$wp_module_key}_{$singleModule['api_name']}"], 1 ); ?>
+																name="wpspi_smart_pipedrive_settings[synch][<?php echo $wp_module_key.'_'.$singleModule['api_name']; ?>]" 
+																<?php @checked( $wpspi_smart_pipedrive_settings['synch']["{$wp_module_key}_{$singleModule['api_name']}"], 1 ); ?>
 																value="1" />
 																Enable
 														</label>
@@ -96,7 +85,7 @@
     				
 				</tbody>
 			</table>
-			<p><input type='submit' class='button-primary' name="submit" value="<?php echo esc_html__( 'Save', 'wpsmt-smart-salesmate' ); ?>" /></p>
+			<p><input type='submit' class='button-primary' name="submit" value="<?php echo esc_html__( 'Save', 'wpspi-smart-pipedrive' ); ?>" /></p>
 		
 		<?php }?>	
 		

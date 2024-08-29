@@ -1,2 +1,2 @@
-# wpsmt-smart-salesmate-integration
-This is a wpsmt-smart-salesmate-integration plugin
+# wpspi-smart-pipedrive-integration
+This is a wpspi-smart-pipedrive-integration plugin

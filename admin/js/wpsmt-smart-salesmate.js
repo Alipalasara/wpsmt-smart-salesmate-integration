@@ -1,12 +1,12 @@
  (function($) { 
  	"use strict"; 
-	var wp_module_name, salesmate_module_name;
+	var wp_module_name, pipedrive_module_name;
  	jQuery(document).on("change", "select[name=wp_module]", function(){
 		jQuery('.loader').addClass('is-active');
 
 		wp_module_name = jQuery(this).val();
 		jQuery.ajax({
-	        url: smart_salesmate_js.ajaxurl,
+	        url: smart_pipedrive_js.ajaxurl,
 	        type: 'post',
 	        data: {
 	            'action':'wp_field',
@@ -20,21 +20,21 @@
 	});
 
 
-	jQuery(document).on("change", "select[name=salesmate_module]", function(){
+	jQuery(document).on("change", "select[name=pipedrive_module]", function(){
 		
 		jQuery('.loader').addClass('is-active');
 
-		salesmate_module_name = jQuery(this).val();
+		pipedrive_module_name = jQuery(this).val();
 
 		jQuery.ajax({
-	        url: smart_salesmate_js.ajaxurl,
+	        url: smart_pipedrive_js.ajaxurl,
 	        type: 'post',
 	        data: {
-	            'action':'salesmate_field',
-	            'salesmate_module_name': salesmate_module_name
+	            'action':'pipedrive_field',
+	            'pipedrive_module_name': pipedrive_module_name
 	        },
 	        success: function( response ) {
-	            jQuery("select[name=salesmate_field]").empty().append(response);
+	            jQuery("select[name=pipedrive_field]").empty().append(response);
 	            jQuery('.loader').removeClass('is-active');
 	        },
 	    });

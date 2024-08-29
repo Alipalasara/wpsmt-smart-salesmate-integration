@@ -1,25 +1,25 @@
 <?php
-class WPSMT_Smart_Salesmate_API {
+class WPSPI_Smart_Pipedrive_API {
     
+    var $url;
     var $api_key;
-    var $store_link;
     
     function __construct() {
        
-        $wpsmt_smart_salesmate_settings     = get_option( 'wpsmt_smart_salesmate_settings' );
+        $wpspi_smart_pipedrive_data_center    = 'https://oauth.pipedrive.com';
+        $wpspi_smart_pipedrive_settings     = get_option( 'wpspi_smart_pipedrive_settings' );
 
-        $api_key = isset($wpsmt_smart_salesmate_settings['smt-token']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-token']) : '';
-        $store_link= get_option('wpsmt_smart_salesmate_settings');
+        $api_key = isset($wpspi_smart_pipedrive_settings['psn-token']) ? esc_attr($wpspi_smart_pipedrive_settings['psn-token']) : '';
 
-        $this->store_link = isset($wpsmt_smart_salesmate_settings['smt-url']) ? esc_attr($wpsmt_smart_salesmate_settings['smt-url']) : '';
+        $this->url      = $wpspi_smart_pipedrive_data_center;
         $this->api_key  = $api_key;
         $this->loadAPIFiles();
 
     }
     
     function loadAPIFiles(){
-        require_once WPSMT_PLUGIN_PATH . 'includes/class.getListofModules.php';
-        require_once WPSMT_PLUGIN_PATH . 'includes/class.getFieldsMetaData.php';
+        require_once WPSPI_PLUGIN_PATH . 'includes/class.getListofModules.php';
+        require_once WPSPI_PLUGIN_PATH . 'includes/class.getFieldsMetaData.php';
     }
 
     function getListModules(){
@@ -31,16 +31,14 @@ class WPSMT_Smart_Salesmate_API {
     }
     
     function addRecord( $module, $data ) {
-        
 
         $json = json_encode( $data );
         $header = array(
             'Content-Type: application/json',
-            'accessToken: '.$this->api_key,
-            'x-linkname: '.$this->store_link
         );
 
-        $url = 'https://'.$this->store_link.'/apis/'.$module.'/v4';
+        $url = WPSPI_PIPEDRIVEAPIS_URL.'/v1/'.$module.'/?api_token='.$this->api_key;
+        
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_HTTPHEADER, $header );
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
@@ -58,7 +56,7 @@ class WPSMT_Smart_Salesmate_API {
             $log .= "message: " . $response->error . "\n";
             $log .= "Date: " . date('Y-m-d H:i:s') . "\n\n";
 
-            file_put_contents(WPSMT_PLUGIN_PATH . 'debug.log', $log, FILE_APPEND);
+            file_put_contents(WPSPI_PLUGIN_PATH . 'debug.log', $log, FILE_APPEND);
         }
         
         return $response;
@@ -69,12 +67,10 @@ class WPSMT_Smart_Salesmate_API {
         
         $data = json_encode( $data );
         $header = array(
-            'Content-Type: application/json',
-            'accessToken: '.$this->api_key,
-            'x-linkname: '.$this->store_link
+            'Authorization: Pipedrive-oauthtoken '.$this->token->access_token,
         );
         
-        $url = 'https://'.$this->store_link.'/apis/'.$module.'/v4/'.$record_id;
+        $url = WPSPI_PIPEDRIVEAPIS_URL.'/crm/v2/'.$module.'/'.$record_id;
         
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_HTTPHEADER, $header );
@@ -92,7 +88,7 @@ class WPSMT_Smart_Salesmate_API {
             $log .= "message: ".$response->data[0]->message."\n";
             $log .= "Date: ".date( 'Y-m-d H:i:s' )."\n\n";                            
 
-            file_put_contents( WPSMT_PLUGIN_PATH.'debug.log', $log, FILE_APPEND );
+            file_put_contents( WPSPI_PLUGIN_PATH.'debug.log', $log, FILE_APPEND );
         }
         
         return $response;

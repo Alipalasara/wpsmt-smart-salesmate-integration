@@ -2,259 +2,352 @@
 class GetFieldsMetaData{
     public function execute($module = NULL){
 
-        if ($module == 'contact') {
+        if ($module == 'deals') {
                     $GetFieldsMetaData = array(
                                                 'fields' => array(
-                                                                    'owner' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Owner',
-                                                                                'api_name' => 'owner'
-                                                                            ),
-
-                                                                     'firstName' => array(
+                                                                    'title' => array(
                                                                                 'system_mandatory' => 1,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'FirstName',
-                                                                                'api_name' => 'firstName'
+                                                                                'display_label' => 'Title',
+                                                                                'api_name' => 'title'
                                                                             ),
-
-                                                                    'lastName' => array(
+                                                                    'value' => array(
+                                                                                'system_mandatory' => 0,
+                                                                                'field_read_only' => '',
+                                                                                'display_label' => 'Value',
+                                                                                'api_name' => 'value'
+                                                                            ),
+                                                                    'label' => array(
                                                                                 'system_mandatory' => 1,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'LastName',
-                                                                                'api_name' => 'lastName'
+                                                                                'display_label' => 'Label',
+                                                                                'api_name' => 'label'
                                                                             ),
-                                                                    'tags' => array(
+
+                                                                    'user_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Tags',
-                                                                                'api_name' => 'tags'
+                                                                                'display_label' => 'User ID',
+                                                                                'api_name' => 'user_id'
                                                                             ),
-                                                                    'mobile' => array(
+                                                                    'person_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Mobile',
-                                                                                'api_name' => 'mobile'
+                                                                                'display_label' => 'Person ID',
+                                                                                'api_name' => 'person_id'
                                                                             ),
-                                                                    'company' => array(
+                                                                    'org_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Company',
-                                                                                'api_name' => 'company'
+                                                                                'display_label' => 'Org ID Number',
+                                                                                'api_name' => 'org_id'
                                                                             ),
-                                                                    'email' => array(
+                                                                    'pipeline_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Email',
-                                                                                'api_name' => 'email'
-                                                                            ),
-                                                                    'website' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Website',
-                                                                                'api_name' => 'website'
+                                                                                'display_label' => 'Pipeline ID',
+                                                                                'api_name' => 'pipeline_id'
                                                                             ),
                                                              
-                                                                    'googlePlusHandle' => array(
+                                                                    'stage_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Google PlusHandle',
-                                                                                'api_name' => 'googlePlusHandle'
+                                                                                'display_label' => 'Stage ID',
+                                                                                'api_name' => 'stage_id'
                                                                             ),    
 
-                                                                    'linkedInHandle' => array(
+                                                                    'origin_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'LinkedIn Handle',
-                                                                                'api_name' => 'linkedInHandle'
+                                                                                'display_label' => 'Origin ID',
+                                                                                'api_name' => 'origin_id'
                                                                             ),
-                                                                    'phone' => array(
+                                                                    'channel_id' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Phone',
-                                                                                'api_name' => 'phone'
+                                                                                'display_label' => 'Channel ID',
+                                                                                'api_name' => 'channel_id'
                                                                             ),
-                                                                    'skypeId' => array(
+                                                                    'add_time' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Skype ID',
-                                                                                'api_name' => 'skypeId'
+                                                                                'display_label' => 'Add Time',
+                                                                                'api_name' => 'add_time'
                                                                             ),
-                                                                    'facebookHandle' => array(
+                                                                    'won_time' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Facebook Handle',
-                                                                                'api_name' => 'facebookHandle'
+                                                                                'display_label' => 'Won Time',
+                                                                                'api_name' => 'won_time'
                                                                             ),
-                                                                    'twitterHandle' => array(
+                                                                    'lost_time' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Twitter Handle',
-                                                                                'api_name' => 'twitterHandle'
-                                                                            ),
-                                                             
-                                                                    'currency' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Currency',
-                                                                                'api_name' => 'currency'
-                                                                            ),
-
-
-                                                                    'designation' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Designation',
-                                                                                'api_name' => 'designation'
+                                                                                'display_label' => 'Lost Time',
+                                                                                'api_name' => 'lost_time'
                                                                             ),
                                                              
-                                                                    'billingAddressLine1' => array(
+                                                                    'expected_close_date' => array(
                                                                                 'system_mandatory' => 0,
                                                                                 'field_read_only' => '',
-                                                                                'display_label' => 'Billing AddressLine 1',
-                                                                                'api_name' => 'billingAddressLine1'
+                                                                                'display_label' => 'Expected Close Date',
+                                                                                'api_name' => 'expected_close_date'
                                                                             ),    
-
-                                                                    'billingCity' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Billing City',
-                                                                                'api_name' => 'billingCity'
-                                                                            ),
-                                                                    'billingZipCode' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Billing ZipCode',
-                                                                                'api_name' => 'billingZipCode'
-                                                                            ),
-                                                                    'billingState' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Billing State',
-                                                                                'api_name' => 'billingState'
-                                                                            ),
-                                                                    'billingCountry' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Billing Country',
-                                                                                'api_name' => 'billingCountry'
-                                                                            ),
-                                                                    'description' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Description',
-                                                                                'api_name' => 'description'
-                                                                            ),       
+                                                                    
                                                     ),
                                             );
 
-                    }elseif ($module == 'company') {
+                    }elseif ($module == 'leads') {
  
                      $GetFieldsMetaData = array(
                                         'fields' => array(
+                                                        'title' => array(
+                                                                    'system_mandatory' => 1,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Title',
+                                                                    'api_name' => 'title'
+                                                                ),
+                                                        'owner_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Owner ID',
+                                                                    'api_name' => 'owner_id'
+                                                                ),
+                                                        'label_ids' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Label ID',
+                                                                    'api_name' => 'label_ids'
+                                                                ),
+                                                        
+                                                        'person_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Person ID',
+                                                                    'api_name' => 'person_id'
+                                                                ),
+                                                        'organization_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Organization ID',
+                                                                    'api_name' => 'organization_id'
+                                                                ),
+                                                        'channel_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Channel ID',
+                                                                    'api_name' => 'channel_id'
+                                                                ),
+                                                        'expected_close_date' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Expected Close Date',
+                                                                    'api_name' => 'expected_close_date'
+                                                                ),
+                                                         'origin_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Origin ID',
+                                                                    'api_name' => 'origin_id'
+                                                                ),
+                                                      
+
+                                                    ),
+                                    );
+                }elseif($module == 'activities'){
+                     $GetFieldsMetaData = array(
+                                    'fields' => array(
+                                                        'due_date' => array(
+                                                                    'system_mandatory' => 1,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Due Date',
+                                                                    'api_name' => 'due_date'
+                                                                ),
+                                                        'due_time' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Due Time',
+                                                                    'api_name' => 'due_time'
+                                                                ),
+                                                        'deal_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Deal ID ',
+                                                                    'api_name' => 'deal_id'
+                                                                ),
+                                                        'lead_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Lead ID',
+                                                                    'api_name' => 'lead_id'
+                                                                ),
+                                                        'person_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Person ID',
+                                                                    'api_name' => 'person_id'
+                                                                ),
+                                                        'project_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Project ID',
+                                                                    'api_name' => 'project_id'
+                                                                ),
+                                                        'location' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Location',
+                                                                    'api_name' => 'location'
+                                                                ),
+                                                                 ),
+                                                        'note' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Note',
+                                                                    'api_name' => 'note'
+                                                                ),
+                                                        'user_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'User ID',
+                                                                    'api_name' => 'user_id'
+                                                                ),
+                                                        'attendees' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Email Attendees',
+                                                                    'api_name' => 'attendees'
+                                                                ),
+                                                        'project_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Project ID',
+                                                                    'api_name' => 'project_id'
+                                                                ),
+                                                        'location' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Location',
+                                                                    'api_name' => 'location'
+                                                                ),
+                                                       
+                                                    );
+
+                }elseif($module == 'persons'){
+                     $GetFieldsMetaData = array(
+                                    'fields' => array(
                                                         'name' => array(
                                                                     'system_mandatory' => 1,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Name',
                                                                     'api_name' => 'name'
                                                                 ),
-                                                        'owner' => array(
+                                                        'owner_id' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Owner',
-                                                                    'api_name' => 'owner'
+                                                                    'display_label' => 'Owner ID',
+                                                                    'api_name' => 'owner_id'
                                                                 ),
-                                                        'website' => array(
+                                                        'org_id' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Website',
-                                                                    'api_name' => 'website'
+                                                                    'display_label' => 'Org ID',
+                                                                    'api_name' => 'org_id'
                                                                 ),
-                                                        
+                                                        'email' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Email',
+                                                                    'api_name' => 'email'
+                                                                ),
                                                         'phone' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
                                                                     'display_label' => 'Phone',
                                                                     'api_name' => 'phone'
                                                                 ),
-                                                        'skypeId' => array(
+                                                        'label' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Skype ID',
-                                                                    'api_name' => 'skypeId'
+                                                                    'display_label' => 'Label',
+                                                                    'api_name' => 'label'
                                                                 ),
-                                                        'facebookHandle' => array(
+                                                        'add_time' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Facebook Handle',
-                                                                    'api_name' => 'facebookHandle'
+                                                                    'display_label' => 'Add Time',
+                                                                    'api_name' => 'add_time'
                                                                 ),
-                                                        'twitterHandle' => array(
-                                                                    'system_mandatory' => 0,
+                                                        ),
+                                                   
+                                );   
+                 }elseif($module == 'products'){
+                     $GetFieldsMetaData = array(
+                                    'fields' => array(
+                                                        'name' => array(
+                                                                    'system_mandatory' => 1,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Twitter Handle',
-                                                                    'api_name' => 'twitterHandle'
+                                                                    'display_label' => 'Name',
+                                                                    'api_name' => 'name'
                                                                 ),
-                                                        'googlePlusHandle' => array(
-                                                                    'system_mandatory' => 0,
+                                                        'code' => array(
+                                                                    'system_mandatory' => 1,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'GooglePlus Handle',
-                                                                    'api_name' => 'googlePlusHandle'
+                                                                    'display_label' => 'Product Code',
+                                                                    'api_name' => 'code'
                                                                 ),
-                                                        'linkedInHandle' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Twitter Handle',
-                                                                    'LinkedIn Handle' => 'linkedInHandle'
-                                                                ),
-                                                 
-                                                        'currency' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Currency',
-                                                                    'api_name' => 'currency'
-                                                                ),
-                                                        'billingAddressLine1' => array(
-                                                                                'system_mandatory' => 0,
-                                                                                'field_read_only' => '',
-                                                                                'display_label' => 'Billing AddressLine 1',
-                                                                                'api_name' => 'billingAddressLine1'
-                                                                ),    
-                                                        'billingCity' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Billing City',
-                                                                    'api_name' => 'billingCity'
-                                                                ),
-                                                        'billingZipCode' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Billing ZipCode',
-                                                                    'api_name' => 'billingZipCode'
-                                                                ),
-                                                        'billingState' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Billing State',
-                                                                    'api_name' => 'billingState'
-                                                                ),
-                                                        'billingCountry' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Billing Country',
-                                                                    'api_name' => 'billingCountry'
-                                                                ),
-
                                                         'description' => array(
+                                                                    'system_mandatory' => 1,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Description',
+                                                                    'api_name' => 'description'
+                                                                ),
+                                                        'unit' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Organization ID',
-                                                                    'api_name' => 'organization_id'
+                                                                    'display_label' => 'unit',
+                                                                    'api_name' => 'unit'
                                                                 ),
-                                                    ),
-                                    );
-                }elseif($module == 'deal'){
+                                                        'tax' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Tax',
+                                                                    'api_name' => 'tax'
+                                                                ),
+                                                        'category' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Category',
+                                                                    'api_name' => 'category'
+                                                                ),
+                                                        'owner_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Owner ID',
+                                                                    'api_name' => 'owner_id'
+                                                                ),
+                                                        'is_linkable' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Is Linkable',
+                                                                    'api_name' => 'is_linkable'
+                                                                ),
+                                                        'prices' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Prices',
+                                                                    'api_name' => 'prices'
+                                                                ),
+                                                        'billing_frequency_cycles' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Billing Frequency Cycles',
+                                                                    'api_name' => 'ubilling_frequency_cyclesnit'
+                                                                ),
+                                                        ),                 
+                                );   
+                     }
+                     elseif($module == 'projects'){
                      $GetFieldsMetaData = array(
                                     'fields' => array(
                                                         'title' => array(
@@ -263,102 +356,17 @@ class GetFieldsMetaData{
                                                                     'display_label' => 'Title',
                                                                     'api_name' => 'title'
                                                                 ),
-                                                        'primaryContact' => array(
+                                                        'board_id' => array(
                                                                     'system_mandatory' => 1,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Primary Contact',
-                                                                    'api_name' => 'primaryContact'
+                                                                    'display_label' => 'Board ID',
+                                                                    'api_name' => 'board_id'
                                                                 ),
-                                                        'owner' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Owner ',
-                                                                    'api_name' => 'owner'
-                                                                ),
-                                                        'pipeline' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Pipeline',
-                                                                    'api_name' => 'pipeline'
-                                                                ),
-                                                        'status' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Status',
-                                                                    'api_name' => 'status'
-                                                                ),
-                                                        'stage' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Stage',
-                                                                    'api_name' => 'stage'
-                                                                ),
-                                                        'primaryCompany' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Primary Company',
-                                                                    'api_name' => 'primaryCompany'
-                                                                 ),
-                                                        'source' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Source',
-                                                                    'api_name' => 'source'
-                                                                ),
-                                                        'estimatedCloseDate' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Estimated CloseDate',
-                                                                    'api_name' => 'estimatedCloseDate'
-                                                                ),
-                                                        'dealValue' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Deal Value',
-                                                                    'api_name' => 'dealValue'
-                                                                ),
-                                                        'currency' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Currency',
-                                                                    'api_name' => 'currency'
-                                                                ),
-                                                        'priority' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Priority',
-                                                                    'api_name' => 'priority'
-                                                                ),
-                                                        'followers' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Followers',
-                                                                    'api_name' => 'followers'
-                                                                ),
-                                                       
-                                                    ),
-                                            );
-
-                }elseif($module == 'activity'){
-                     $GetFieldsMetaData = array(
-                                    'fields' => array(
-                                                        'title' => array(
+                                                        'phase_id' => array(
                                                                     'system_mandatory' => 1,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Title',
-                                                                    'api_name' => 'title'
-                                                                ),
-                                                        'owner' => array(
-                                                                    'system_mandatory' => 1,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Owner',
-                                                                    'api_name' => 'owner'
-                                                                ),
-                                                        'type' => array(
-                                                                    'system_mandatory' => 0,
-                                                                    'field_read_only' => '',
-                                                                    'display_label' => 'Type',
-                                                                    'api_name' => 'type'
+                                                                    'display_label' => 'Phase ID',
+                                                                    'api_name' => 'phase_id'
                                                                 ),
                                                         'description' => array(
                                                                     'system_mandatory' => 0,
@@ -366,28 +374,89 @@ class GetFieldsMetaData{
                                                                     'display_label' => 'Description',
                                                                     'api_name' => 'description'
                                                                 ),
-                                                        'dueDate' => array(
+                                                        'status' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Due Date',
-                                                                    'api_name' => 'dueDate'
+                                                                    'display_label' => 'Status',
+                                                                    'api_name' => 'status'
                                                                 ),
-                                                        'duration' => array(
+                                                        'owner_id' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Duration',
-                                                                    'api_name' => 'duration'
+                                                                    'display_label' => 'Owner ID',
+                                                                    'api_name' => 'owner_id'
                                                                 ),
-                                                        'followers' => array(
+                                                        'start_date' => array(
                                                                     'system_mandatory' => 0,
                                                                     'field_read_only' => '',
-                                                                    'display_label' => 'Followers',
-                                                                    'api_name' => 'followers'
+                                                                    'display_label' => 'Start Date',
+                                                                    'api_name' => 'start_date'
                                                                 ),
-                                                        ),
-                                                   
+                                                        'end_date' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'End Date',
+                                                                    'api_name' => 'end_date'
+                                                                ),
+                                                         'deal_ids' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Deal Ids',
+                                                                    'api_name' => 'deal_ids'
+                                                                ),
+                                                        'org_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Org ID',
+                                                                    'api_name' => 'org_id'
+                                                                ),
+                                                        'person_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Person ID',
+                                                                    'api_name' => 'person_id'
+                                                                ),
+                                                        'labels' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Labels',
+                                                                    'api_name' => 'labels'
+                                                                ),
+                                                        ),   
                                 );   
-                 }
+                     }elseif($module == 'organizations'){
+                     $GetFieldsMetaData = array(
+                                    'fields' => array(
+                                                        'name' => array(
+                                                                    'system_mandatory' => 1,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Name',
+                                                                    'api_name' => 'name'
+                                                                ),
+                                                        'add_time' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Add Time',
+                                                                    'api_name' => 'add_time'
+                                                                ),
+                                                        'owner_id' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Owner ID',
+                                                                    'api_name' => 'owner_id'
+                                                                ),
+                                                        'label' => array(
+                                                                    'system_mandatory' => 0,
+                                                                    'field_read_only' => '',
+                                                                    'display_label' => 'Label',
+                                                                    'api_name' => 'label'
+                                                                ),
+                                                       
+                                                       
+                                            
+                                                    ),
+                                ); 
+                        }  
                 return $GetFieldsMetaData;
             }
         }

@@ -2,7 +2,7 @@ msgid ""
 
 msgstr ""
 
-"Project-Id-Version: Wszi Smart Salesmate\n"
+"Project-Id-Version: Wszi Smart Pipedrive\n"
 
 "Report-Msgid-Bugs-To: \n"
 
@@ -128,25 +128,25 @@ msgstr ""
 
 
 
-msgid "Select Salesmate Fields"
+msgid "Select Pipedrive Fields"
 
 msgstr ""
 
 
 
-msgid "Smart Salesmate"
+msgid "Smart Pipedrive"
 
 msgstr ""
 
 
 
-msgid "Smart Salesmate Settings"
+msgid "Smart Pipedrive Settings"
 
 msgstr ""
 
 
 
-msgid "Smart Salesmate Fields Mappings"
+msgid "Smart Pipedrive Fields Mappings"
 
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 
 
 
-msgid "Smart Salesmate Synchronization"
+msgid "Smart Pipedrive Synchronization"
 
 msgstr ""
 
@@ -200,25 +200,25 @@ msgstr ""
 
 
 
-msgid "Salesmate Modules"
+msgid "Pipedrive Modules"
 
 msgstr ""
 
 
 
-msgid "Select Salesmate Module"
+msgid "Select Pipedrive Module"
 
 msgstr ""
 
 
 
-msgid "Salesmate Fields"
+msgid "Pipedrive Fields"
 
 msgstr ""
 
 
 
-msgid "Please select Salesmate Modules"
+msgid "Please select Pipedrive Modules"
 
 msgstr ""
 
@@ -254,13 +254,13 @@ msgstr ""
 
 
 
-msgid "Salesmate Module"
+msgid "Pipedrive Module"
 
 msgstr ""
 
 
 
-msgid "Salesmate Field"
+msgid "Pipedrive Field"
 
 msgstr ""
 

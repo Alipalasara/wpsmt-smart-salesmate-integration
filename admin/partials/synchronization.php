@@ -1,6 +1,6 @@
 <div class="wrap">                
 	
-	<h1><?php echo esc_html__( 'Salesmate Synchronization' ); ?></h1>
+	<h1><?php echo esc_html__( 'Pipedrive Synchronization' ); ?></h1>
 	<hr>
 
 	<form method="post">
@@ -9,9 +9,9 @@
 		?>
 
 		<nav class="nav-tab-wrapper woo-nav-tab-wrapper">
-			<a href="<?php echo admin_url('admin.php?page=wpsmt-smart-salesmate-synchronization&tab=products'); ?>" class="nav-tab <?php if($tab == 'products'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Products', 'wpsmt-smart-salesmate' ); ?></a>
-			<a href="<?php echo admin_url('admin.php?page=wpsmt-smart-salesmate-synchronization&tab=orders'); ?>" class="nav-tab <?php if($tab == 'orders'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Orders', 'wpsmt-smart-salesmate' ); ?></a>
-			<a href="<?php echo admin_url('admin.php?page=wpsmt-smart-salesmate-synchronization&tab=customers'); ?>" class="nav-tab <?php if($tab == 'customers'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Customers', 'wpsmt-smart-salesmate' ); ?></a>
+			<a href="<?php echo admin_url('admin.php?page=wpspi-smart-pipedrive-synchronization&tab=products'); ?>" class="nav-tab <?php if($tab == 'products'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Products', 'wpspi-smart-pipedrive' ); ?></a>
+			<a href="<?php echo admin_url('admin.php?page=wpspi-smart-pipedrive-synchronization&tab=orders'); ?>" class="nav-tab <?php if($tab == 'orders'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Orders', 'wpspi-smart-pipedrive' ); ?></a>
+			<a href="<?php echo admin_url('admin.php?page=wpspi-smart-pipedrive-synchronization&tab=customers'); ?>" class="nav-tab <?php if($tab == 'customers'){ echo 'nav-tab-active';} ?>"><?php echo esc_html__( 'Customers', 'wpspi-smart-pipedrive' ); ?></a>
 		</nav>
 		
 		<input type="hidden" name="tab" value="<?php echo esc_attr($tab); ?>">

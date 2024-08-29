@@ -1,5 +1,5 @@
 <?php
-class WPSMT_Smart_Salesmate_Field_Mappings {
+class WPSPI_Smart_Pipedrive_Field_Mappings {
 
 	var $customer_fields;
 	
@@ -16,9 +16,9 @@ class WPSMT_Smart_Salesmate_Field_Mappings {
        		$record_exists = $wpdb->get_row( 
        			$wpdb->prepare(
        				"
-       				SELECT * FROM ".$wpdb->prefix ."smart_salesmate_field_mapping  WHERE wp_module = %s AND wp_field = %s  AND salesmate_module = %s AND salesmate_field = %s
+       				SELECT * FROM ".$wpdb->prefix ."smart_pipedrive_field_mapping  WHERE wp_module = %s AND wp_field = %s  AND pipedrive_module = %s AND pipedrive_field = %s
        				" ,
-       				$wp_module, $wp_field, $salesmate_module, $salesmate_field
+       				$wp_module, $wp_field, $pipedrive_module, $pipedrive_field
        				)
        			
        		);
@@ -30,12 +30,12 @@ class WPSMT_Smart_Salesmate_Field_Mappings {
 			  
 
 			  	$wpdb->update(
-					$wpdb->prefix . 'smart_salesmate_field_mapping', 
+					$wpdb->prefix . 'smart_pipedrive_field_mapping', 
 					array( 
 					    'wp_module' 	=> sanitize_text_field($wp_module),
 					    'wp_field' 		=> sanitize_text_field($wp_field),
-					    'salesmate_module' 	=> sanitize_text_field($salesmate_module),
-					    'salesmate_field'	=> sanitize_text_field($salesmate_field), 
+					    'pipedrive_module' 	=> sanitize_text_field($pipedrive_module),
+					    'pipedrive_field'	=> sanitize_text_field($pipedrive_field), 
 					    'status' 		=> sanitize_text_field($status),
 					    'description' 	=> sanitize_text_field($description), 
 					    'is_predefined' => sanitize_text_field($is_predefined), 
@@ -56,12 +56,12 @@ class WPSMT_Smart_Salesmate_Field_Mappings {
 			}else{
 
 				$wpdb->insert(
-					$wpdb->prefix . 'smart_salesmate_field_mapping', 
+					$wpdb->prefix . 'smart_pipedrive_field_mapping', 
 					array( 
 					    'wp_module' 	=> sanitize_text_field($wp_module),
 					    'wp_field' 		=> sanitize_text_field($wp_field),
-					    'salesmate_module' 	=> sanitize_text_field($salesmate_module),
-					    'salesmate_field'	=> sanitize_text_field($salesmate_field), 
+					    'pipedrive_module' 	=> sanitize_text_field($pipedrive_module),
+					    'pipedrive_field'	=> sanitize_text_field($pipedrive_field), 
 					    'status' 		=> sanitize_text_field($status),
 					    'description' 	=> sanitize_text_field($description), 
 					    'is_predefined' => 'no', 
@@ -86,7 +86,7 @@ class WPSMT_Smart_Salesmate_Field_Mappings {
 		if( isset( $_REQUEST['action'] ) && isset( $_REQUEST['id'] ) &&  $_REQUEST['action'] == 'trash' ){
 			global $wpdb;
 	   		$wpdb->delete( 
-				$wpdb->prefix . 'smart_salesmate_field_mapping', 
+				$wpdb->prefix . 'smart_pipedrive_field_mapping', 
 				array( 
 				    'id' 	=> sanitize_text_field($_REQUEST['id']),
 				), 
@@ -94,25 +94,25 @@ class WPSMT_Smart_Salesmate_Field_Mappings {
 				    '%d'
 				) 
 			);
-			wp_redirect(admin_url('admin.php?page=wpsmt-smart-salesmate-mappings'));
+			wp_redirect(admin_url('admin.php?page=wpspi-smart-pipedrive-mappings'));
 			exit();
 		}    	
     }
 
     public function displayMappingsForm(){
         $wp_module 		= isset($_GET['wp_module']) ? sanitize_text_field($_GET['wp_module']) : false;
-        $salesmate_module 	= isset($_GET['salesmate_module']) ? sanitize_text_field($_GET['salesmate_module']) : false;
+        $pipedrive_module 	= isset($_GET['pipedrive_module']) ? sanitize_text_field($_GET['pipedrive_module']) : false;
 
-        $smart_salesmate_obj = new WPSMT_Smart_Salesmate();
-        $wp_modules 	= $smart_salesmate_obj->get_wp_modules();
-        $getListModules = $smart_salesmate_obj->get_salesmate_modules();
+        $smart_pipedrive_obj = new WPSPI_Smart_Pipedrive();
+        $wp_modules 	= $smart_pipedrive_obj->get_wp_modules();
+        $getListModules = $smart_pipedrive_obj->get_pipedrive_modules();
         
-       	require_once WPSMT_PLUGIN_PATH . 'admin/partials/field-mappings.php';	
+       	require_once WPSPI_PLUGIN_PATH . 'admin/partials/field-mappings.php';	
     }
 
     public function displayMappingsFieldList(){
 
-       	require_once WPSMT_PLUGIN_PATH . 'admin/partials/mappings-field-list.php';	
+       	require_once WPSPI_PLUGIN_PATH . 'admin/partials/mappings-field-list.php';	
     }
 }
 ?>

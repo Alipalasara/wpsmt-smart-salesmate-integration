@@ -14,8 +14,8 @@ function usersFinalData($users_data)
 class Customers_List extends WP_List_Table{
     /** Class constructor */
     public function __construct(){
-        parent::__construct(['singular'     => esc_html__('Customer', 'wpsmt-smart-salesmate') , //singular name of the listed records
-        'plural'                            => esc_html__('Customers', 'wpsmt-smart-salesmate') , //plural name of the listed records
+        parent::__construct(['singular'     => esc_html__('Customer', 'wpspi-smart-pipedrive') , //singular name of the listed records
+        'plural'                            => esc_html__('Customers', 'wpspi-smart-pipedrive') , //plural name of the listed records
         'ajax'                              => true
         //does this table support ajax?
         ]);
@@ -72,7 +72,7 @@ class Customers_List extends WP_List_Table{
 
     /** Text displayed when no customer data is available */
     public function no_items(){
-        echo esc_html__('No customers avaliable.', 'wpsmt-smart-salesmate');
+        echo esc_html__('No customers avaliable.', 'wpspi-smart-pipedrive');
     }
 
     /**
@@ -112,7 +112,7 @@ class Customers_List extends WP_List_Table{
         $action = '<form action="" method="post">                      
                         <input name="wp_module" value="customers" type="hidden" />
                         <input name="id" value="'.esc_attr($item['ID']).'" type="hidden" />
-                        <button class="button" name="smart_synch" value="salesmate" type="submit">'.esc_html__('Sync', 'wpsmt-smart-salesmate').'</button>
+                        <button class="button" name="smart_synch" value="pipedrive" type="submit">'.esc_html__('Sync', 'wpspi-smart-pipedrive').'</button>
                 </form>';
         return $action;
     }
@@ -124,11 +124,11 @@ class Customers_List extends WP_List_Table{
      */
     function get_columns(){
         $columns = [
-                'ID'                  => esc_html__('Id', 'wpsmt-smart-salesmate') , 
-                'woocommerce_name'    => esc_html__('Name', 'wpsmt-smart-salesmate') , 
-                'user_email'          => esc_html__('Email', 'wpsmt-smart-salesmate') , 
-                'user_registered'     => esc_html__('Create Time', 'wpsmt-smart-salesmate') , 
-                'action'              => esc_html__('Action', 'wpsmt-smart-salesmate') 
+                'ID'                  => esc_html__('Id', 'wpspi-smart-pipedrive') , 
+                'woocommerce_name'    => esc_html__('Name', 'wpspi-smart-pipedrive') , 
+                'user_email'          => esc_html__('Email', 'wpspi-smart-pipedrive') , 
+                'user_registered'     => esc_html__('Create Time', 'wpspi-smart-pipedrive') , 
+                'action'              => esc_html__('Action', 'wpspi-smart-pipedrive') 
             ];
         return $columns;
     }
